@@ -16,7 +16,7 @@ services:
       start_period: 40s
     labels:
       traefik.enable: "true"
-      traefik.http.routers.radarr.rule: "Host(`DOMAIN_NAME?error`)"
+      traefik.http.routers.radarr.rule: "Host(`${DOMAIN_NAME?error}`)"
       traefik.http.routers.radarr.entrypoints: "https"
       traefik.http.routers.radarr.tls: "true"
       traefik.http.services.radarr.loadbalancer.server.port: "7878"
